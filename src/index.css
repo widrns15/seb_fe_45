@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0px;
+  box-sizing: border-box;
+  font-family: monospace, cursive;
+  color: black;
+}
+
+img {
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("./img/kirby.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.calculator_display {
+  border-radius: 1vw;
+  justify-content: center;
+  text-align: end;
+  color: white;
+  font-size: 3.5vw;
+  display: flex;
+  flex-direction: column;
+  height: 12vh;
+  width: 100%;
+  padding: 10%;
+  flex: 40 1 0;
+}
+
+main {
+  height: 48vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 5%; /* TODO. padding %로 다뤄보기*/
+  border-radius: 20px;
+  margin-top: 1vh;
+}
+
+.numberline5,
+.numberline4,
+.numberline3,
+.numberline2,
+.numberline1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  margin-top: -1vh;
+}
+
+.calculator {
+  width: 30vw;
+  height: 65vh;
+  padding: 1%;
+  position: absolute;
+  border-radius: 10vh;
+}
+
+.btn1,
+.btn2,
+.btn3,
+.btn4,
+.btn5,
+.btn6,
+.btn7,
+.btn8,
+.btn9,
+.btn0,
+.btn-dot,
+.btn-plus,
+.btn-minus,
+.btn-star,
+.btn-slash,
+.btn-plus-minus,
+.btn-per,
+.btn-plus-minus,
+.btn-result,
+.btn-erase {
+  background-color: rgba(250, 217, 222, 0.8);
+  width: 14vh;
+  height: 5vh;
+  font-size: 1.3vw;
+  border-radius: 3vw;
+  padding: 1%;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1 1 auto;
+  margin: 2%;
+}
+
+.btn-erase,
+.btn-plus-minus,
+.btn-per {
+  color: red;
+}
