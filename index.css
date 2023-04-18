@@ -1,4 +1,5 @@
 * {
+  /* 브라우저 기본 값 리셋 */
   margin: 0;
   padding: 0;
   border: 0px;
@@ -8,16 +9,16 @@
 }
 
 img {
-  height: 100vh;
+  height: 95vh;
   width: 50%;
   position: absolute;
 }
 
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: center; /* 브라우저 화면 가운데 Y축에 놓아줌 */
+  align-items: center; /* 브라우저 화면 가운데 X축에 놓아줌 */
+  height: 100vh; /* 화면에 나타낼 전체 옵젝 크기를 제한 */
   background: url("./img/kirby.gif") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -26,27 +27,25 @@ body {
 }
 
 .calculator_display {
-  border-radius: 1vw;
   justify-content: center;
   text-align: end;
   color: white;
-  font-size: 3.5vw;
+  font-size: 5rem;
   display: flex;
   flex-direction: column;
-  height: 12vh;
-  width: 100%;
-  padding: 10%;
-  flex: 40 1 0;
+  flex: 25 0 0;
+  margin-right: 2vw;
+  margin-top: -2vh;
+  margin-bottom: 3vh;
 }
 
 main {
-  height: 48vh;
-  width: 100%;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 숫자열이 column 방향일 때, 흩어지게 배치 */
   align-items: center;
-  padding: 5%; /* TODO. padding %로 다뤄보기*/
-  border-radius: 20px;
-  margin-top: 1vh;
+  flex: 75 0 0;
+  margin-top: -1vh;
 }
 
 .numberline5,
@@ -55,18 +54,15 @@ main {
 .numberline2,
 .numberline1 {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5%;
-  margin-top: -1vh;
+  margin-top: -1vw; /* 브라우저 Y축이 줄었을 때, 글자 이탈 방지 */
 }
 
 .calculator {
   width: 30vw;
-  height: 65vh;
-  padding: 1%;
+  height: 80vh;
   position: absolute;
-  border-radius: 10vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn1,
@@ -90,15 +86,14 @@ main {
 .btn-result,
 .btn-erase {
   background-color: rgba(250, 217, 222, 0.8);
-  width: 14vh;
+  width: 7vw;
   height: 5vh;
-  font-size: 1.3vw;
+  font-size: 1.5rem;
   border-radius: 3vw;
-  padding: 1%;
   font-weight: bold;
   cursor: pointer;
-  flex: 1 1 auto;
   margin: 2%;
+  border: solid 1px;
 }
 
 .btn-erase,
