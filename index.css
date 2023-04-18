@@ -101,3 +101,48 @@ main {
 .btn-per {
   color: red;
 }
+
+@media screen and (max-width: 575px) {
+  img {
+    height: 50vh;
+    width: 70%;
+    position: absolute;
+  }
+  .calculator {
+    width: 30vw;
+    height: 45vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+  .calculator_display {
+    margin-right: 0vw;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: -20vh;
+    margin-bottom: 20vh;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4,
+  .btn5,
+  .btn6,
+  .btn7,
+  .btn8,
+  .btn9,
+  .btn0,
+  .btn-dot,
+  .btn-plus,
+  .btn-minus,
+  .btn-star,
+  .btn-slash,
+  .btn-plus-minus,
+  .btn-per,
+  .btn-plus-minus,
+  .btn-result,
+  .btn-erase {
+    width: 12vw;
+    height: 4vh;
+  }
+}
