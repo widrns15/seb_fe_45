@@ -4,49 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>계산기</title>
+    <title>유효성 검사</title>
+    <link rel="stylesheet" href="global-style.css" />
     <link rel="stylesheet" href="index.css" />
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
-  <img src="./img/object.png" alt="계산기" />
-
   <body>
-    <div class="calculator">
-      <div class="calculator_display">0</div>
-      <main>
-        <div class="numberline5">
-          <button class="clear">C</button>
-          <button class="convert">+/-</button>
-          <button class="operator">%</button>
-          <button class="operator">/</button>
-        </div>
-        <div class="numberline4">
-          <button class="number">7</button>
-          <button class="number">8</button>
-          <button class="number">9</button>
-          <button class="operator">*</button>
-        </div>
-        <div class="numberline3">
-          <button class="number">4</button>
-          <button class="number">5</button>
-          <button class="number">6</button>
-          <button class="operator">-</button>
-        </div>
+    <main>
+      <img
+        class="logo"
+        src="./img/codestates-logo.png"
+        alt="CODE_STATES_LOGO"
+      />
 
-        <div class="numberline2">
-          <button class="number">1</button>
-          <button class="number">2</button>
-          <button class="number">3</button>
-          <button class="operator">+</button>
-        </div>
+      <fieldset>
+        <input type="text" id="username" placeholder="아이디" />
+      </fieldset>
 
-        <div class="numberline1">
-          <button class="number double">0</button>
-          <button class="decimal">.</button>
-          <button class="calculate">=</button>
-        </div>
-      </main>
-    </div>
-    <script src="index.js"></script>
+      <div class="success-message hide">사용할 수 있는 아이디입니다</div>
+      <div class="failure-message hide">아이디는 네 글자 이상이어야 합니다</div>
+
+      <fieldset>
+        <input type="password" id="password" placeholder="비밀번호" />
+      </fieldset>
+
+      <fieldset>
+        <input
+          type="password"
+          id="password-retype"
+          placeholder="비밀번호 확인"
+        />
+      </fieldset>
+
+      <div class="mismatch-message hide">비밀번호가 일치하지 않습니다</div>
+
+      <fieldset class="signup">
+        <button>회원가입</button>
+      </fieldset>
+
+      <script src="index.js"></script>
+    </main>
   </body>
 </html>

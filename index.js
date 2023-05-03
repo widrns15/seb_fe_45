@@ -1,72 +1,38 @@
-const calculator = document.querySelector(".calculator");
-const buttons = calculator.querySelector("main");
+// 동영상 강의에 나온 코드를 그대로 실습하세요
+// TODO : DOM으로부터 필요한 엘리먼트를 불러오세요.
+const elInputUsername = document.querySelector("#username");
+const elSuccesssMessage = document.querySelector(".success-message");
+const elFailureMessage = document.querySelector(".failure-message");
 
-const operator = document.querySelector(".calculator__operator");
-const calculatedResult = document.querySelector(".calculator__result");
+const passWord = document.querySelector("#password");
+const passWordRetype = document.querySelector("#password-retype");
+const isMatchPassword = document.querySelector(".mismatch-message");
 
-function calculate(n1, operator, n2) {
-  let result = 0;
-
-  if (operator === "+") {
-    result = n1 + n2;
-  } else if (operator === "-") {
-    result = n1 - n2;
-  } else if (operator === "*") {
-    result = n1 * n2;
-  } else if (operator === "/") {
-    result = n1 / n2;
-  } else if (operator === "%") {
-    result = n1 % n2;
-  }
-
-  return String(result);
+function isMoreThan4Length(value) {
+  // TODO : 동영상 강의를 보고 이 함수를 완성하세요.
+  return value.length >= 4;
 }
 
-const display = document.querySelector(".calculator_display");
-let firstNum, operatorForAdvanced, previousKey, previousNum;
+function isMatch(password1, password2) {
+  // TODO : 동영상 강의를 보고 이 함수를 완성하세요.
+  return password1 === password2;
+}
 
-buttons.addEventListener("click", function (event) {
-  const target = event.target;
-  const action = target.classList[0];
-  const buttonContent = target.textContent;
-
-  // ToDo. 클래스 number나 operator로 통일해야 가능
-
-  if (action === "number") {
-    if (display.textContent === "0" || previousKey === "operator") {
-      display.textContent = buttonContent;
-    } else {
-      display.textContent += buttonContent;
-    }
-    previousKey = "number";
+elInputUsername.onkeyup = () => {
+  if (isMoreThan4Length(elInputUsername.value)) {
+    elSuccesssMessage.classList.remove("hide");
+    elFailureMessage.classList.add("hide");
+  } else {
+    elFailureMessage.classList.remove("hide");
+    elSuccesssMessage.classList.add("hide");
   }
+};
 
-  if (action === "operator") {
-    firstNum = display.textContent;
-    operatorForAdvanced = buttonContent;
-    previousKey = "operator";
-    if (operatorForAdvanced === buttonContent || display.textContent === "0") {
-      display.textContent = buttonContent;
-    }
+passWordRetype.onkeyup = () => {
+  console.log(passWordRetype.value);
+  if (isMatch(passWord.value, passWordRetype.value)) {
+    isMatchPassword.classList.add("hide");
+  } else {
+    isMatchPassword.classList.remove("hide");
   }
-
-  if (action === "convert") {
-    display.textContent = -display.textContent;
-  }
-
-  if (action === "decimal") {
-  }
-
-  if (action === "clear") {
-    display.textContent = "0";
-    displayNumber = null;
-    firstNum = null;
-    previousKey = null;
-  }
-
-  if (action === "calculate") {
-    let n1 = Number(firstNum);
-    let n2 = Number(display.textContent);
-    display.textContent = calculate(n1, operatorForAdvanced, n2);
-  }
-});
+};
