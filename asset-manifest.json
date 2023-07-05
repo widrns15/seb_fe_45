@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/seb_fe_45/static/css/main.f60febd8.css",
+    "main.js": "/seb_fe_45/static/js/main.88d02088.js",
+    "index.html": "/seb_fe_45/index.html",
+    "main.f60febd8.css.map": "/seb_fe_45/static/css/main.f60febd8.css.map",
+    "main.88d02088.js.map": "/seb_fe_45/static/js/main.88d02088.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f60febd8.css",
+    "static/js/main.88d02088.js"
+  ]
+}
